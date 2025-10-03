@@ -1,10 +1,434 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cihangir Yaman - Developer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #4a5568;
+            background: #f7f8fa;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            border: 1px solid #e8eaed;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #718096;
+            margin-bottom: 5px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e8eaed;
+            color: #4a5568;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+            border: 1px solid #d1d5db;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.3s ease;
+            border: 1px solid #e8eaed;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            font-weight: 600;
+            border-bottom: 2px solid #e8eaed;
+            padding-bottom: 10px;
+        }
+
+        .card h3 {
+            color: #2d3748;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: #4a5568;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background: #f3f4f6;
+            color: #4a5568;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            transition: background 0.2s ease, transform 0.2s ease;
+            border: 1px solid #e5e7eb;
+            cursor: pointer;
+        }
+
+        .skill-item:hover {
+            background: #e5e7eb;
+            transform: translateY(-2px);
+        }
+
+        .skill-item.expandable {
+            position: relative;
+        }
+
+        .skill-item.expandable::after {
+            content: '+';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+            color: #9ca3af;
+        }
+
+        .languages-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .languages-list li {
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #f9fafb;
+            border-left: 3px solid #9ca3af;
+            border-radius: 5px;
+            color: #4a5568;
+        }
+
+        .hobbies-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .hobbies-list li {
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #f9fafb;
+            border-radius: 5px;
+            color: #4a5568;
+            position: relative;
+            padding-left: 35px;
+        }
+
+        .hobbies-list li:before {
+            content: "▶";
+            color: #9ca3af;
+            font-weight: bold;
+            position: absolute;
+            left: 12px;
+        }
+
+        .connect-btn {
+            display: inline-block;
+            background: #4a5568;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+            border: 1px solid #2d3748;
+        }
+
+        .connect-btn:hover {
+            background: #2d3748;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #e8eaed;
+            color: #4a5568;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 20px;
+            transition: background 0.3s ease;
+            border: 1px solid #d1d5db;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: #d1d5db;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .projects-note {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            color: #78350f;
+            font-style: italic;
+        }
+
+        .tech-detail-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .tech-detail-list li {
+            padding: 10px 0;
+            color: #4a5568;
+            border-bottom: 1px solid #e8eaed;
+        }
+
+        .tech-detail-list li:last-child {
+            border-bottom: none;
+        }
+
+        .tech-detail-list li strong {
+            color: #2d3748;
+            margin-right: 8px;
+        }
+
+        .experience-badge {
+            display: inline-block;
+            background: #e8eaed;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-top: 10px;
+            color: #4a5568;
+            border: 1px solid #d1d5db;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #718096;
+            font-size: 0.9em;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="container">
+    <header>
+        <h1>Hi there, I'm Cihangir Yaman</h1>
+        <div class="subtitle">Computer Engineering Student at Marmara University</div>
+        <span class="badge">Freelancer</span>
+    </header>
+
+    <!-- Main Portfolio Page -->
+    <div id="mainPage">
+        <div class="content-grid">
+            <div class="card full-width">
+                <h2>About Me</h2>
+                <p>I'm a passionate Computer Engineering student at Marmara University, actively building my skills in engineering. My journey blends rigorous coursework with real-world freelance projects, giving me hands-on experience in developing robust and scalable software solutions.</p>
+                <p>I thrive on solving problems using technology and am always eager to take on new challenges that stretch my capabilities. Whether it's collaborating on innovative projects or diving deep into new tech stacks, I aim to bridge theory with practical impact.</p>
+            </div>
+
+            <div class="card">
+                <h2>Skills & Tech</h2>
+                <div class="skills-grid">
+                    <div class="skill-item expandable" onclick="showSkillDetail('csharp')">C#</div>
+                    <div class="skill-item">ASP.NET</div>
+                    <div class="skill-item">Java</div>
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">FastAPI</div>
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">SQL</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Languages</h2>
+                <ul class="languages-list">
+                    <li><strong>Turkish</strong> - Native</li>
+                    <li><strong>English</strong> - B2-C1</li>
+                    <li><strong>German</strong> - A2</li>
+                </ul>
+            </div>
+
+            <div class="card full-width">
+                <h2>Featured Projects</h2>
+                <p>Check out my pinned projects below for a showcase of what I'm most proud of!</p>
+                <div class="projects-note">
+                    <strong>Note:</strong> The projects I'm most proud of are private because customers don't want to make them public.
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Hobbies</h2>
+                <ul class="hobbies-list">
+                    <li>Basketball & cycling enthusiast</li>
+                    <li>Deeply interested in History and Sociology</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Connect with Me</h2>
+                <p>Let's connect and collaborate on exciting projects!</p>
+                <a href="#" target="_blank" class="connect-btn">LinkedIn Profile</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- C# Detail Page -->
+    <div id="csharpPage" class="hidden">
+        <a class="back-btn" onclick="showMainPage()">← Back to Portfolio</a>
+
+        <div class="content-grid">
+            <div class="card full-width">
+                <h2>C# Expertise</h2>
+                <span class="experience-badge">Primary Language</span>
+                <p>C# is one of my core programming languages, which I've extensively used in both academic projects and professional freelance work. My experience spans from building desktop applications to developing robust backend systems.</p>
+            </div>
+
+            <div class="card">
+                <h2>Frameworks & Libraries</h2>
+                <ul class="tech-detail-list">
+                    <li><strong>ASP.NET Core:</strong> Web API development, MVC applications</li>
+                    <li><strong>.NET Framework:</strong> Traditional desktop and enterprise applications</li>
+                    <li><strong>Entity Framework:</strong> ORM for database operations</li>
+                    <li><strong>LINQ:</strong> Data querying and manipulation</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Technical Skills</h2>
+                <ul class="tech-detail-list">
+                    <li><strong>Object-Oriented Programming:</strong> Design patterns, SOLID principles</li>
+                    <li><strong>Asynchronous Programming:</strong> async/await, Task-based patterns</li>
+                    <li><strong>RESTful APIs:</strong> Building and consuming web services</li>
+                    <li><strong>Database Integration:</strong> SQL Server, PostgreSQL with C#</li>
+                    <li><strong>Dependency Injection:</strong> IoC containers, service lifetime management</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Project Experience</h2>
+                <h3>Freelance Projects</h3>
+                <p>Developed multiple backend systems using C# and ASP.NET Core for various clients, focusing on scalable architecture and clean code practices. Created RESTful APIs with proper authentication and authorization mechanisms.</p>
+
+                <h3>Academic Work</h3>
+                <p>Built several university projects demonstrating proficiency in C# fundamentals, data structures, algorithms, and software design patterns. Implemented complex systems following industry best practices.</p>
+            </div>
+
+            <div class="card">
+                <h2>Development Tools</h2>
+                <ul class="tech-detail-list">
+                    <li><strong>IDE:</strong> Visual Studio, Visual Studio Code, Rider</li>
+                    <li><strong>Version Control:</strong> Git, GitHub</li>
+                    <li><strong>Testing:</strong> xUnit, NUnit, MSTest</li>
+                    <li><strong>Package Management:</strong> NuGet</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Key Strengths</h2>
+                <ul class="hobbies-list">
+                    <li>Writing clean, maintainable, and well-documented code</li>
+                    <li>Implementing scalable and robust backend solutions</li>
+                    <li>Problem-solving with efficient algorithms</li>
+                    <li>Following modern C# best practices and conventions</li>
+                    <li>Continuous learning of new C# features and frameworks</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Cihangir Yaman. All rights reserved.</p>
+    </footer>
+</div>
+
+<script>
+    function showSkillDetail(skill) {
+        if (skill === 'csharp') {
+            document.getElementById('mainPage').classList.add('hidden');
+            document.getElementById('csharpPage').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+    }
+
+    function showMainPage() {
+        document.getElementById('csharpPage').classList.add('hidden');
+        document.getElementById('mainPage').classList.remove('hidden');
+        window.scrollTo(0, 0);
+    }
+</script>
 </body>
 </html>
