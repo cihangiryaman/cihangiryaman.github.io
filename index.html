@@ -48,6 +48,22 @@
             margin-bottom: 5px;
         }
 
+        .contact-info {
+            margin-top: 15px;
+            color: #718096;
+            font-size: 0.95em;
+        }
+
+        .contact-info a {
+            color: #4a5568;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .contact-info a:hover {
+            color: #2d3748;
+        }
+
         .badge {
             display: inline-block;
             background: #e8eaed;
@@ -177,6 +193,33 @@
             left: 12px;
         }
 
+        .project-item {
+            background: #f9fafb;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #9ca3af;
+        }
+
+        .project-item h4 {
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .project-item .role {
+            color: #718096;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .project-item p {
+            color: #4a5568;
+            font-size: 0.95em;
+            text-align: left;
+        }
+
         .connect-btn {
             display: inline-block;
             background: #4a5568;
@@ -185,7 +228,7 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
-            margin-top: 20px;
+            margin: 10px 5px;
             transition: background 0.3s ease;
             border: 1px solid #2d3748;
         }
@@ -252,9 +295,21 @@
             padding: 6px 14px;
             border-radius: 15px;
             font-size: 0.85em;
-            margin-top: 10px;
+            margin: 5px 5px 5px 0;
             color: #4a5568;
             border: 1px solid #d1d5db;
+        }
+
+        .highlight-box {
+            background: #e8eaed;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .highlight-box strong {
+            color: #2d3748;
+            font-size: 1.1em;
         }
 
         footer {
@@ -288,7 +343,12 @@
     <header>
         <h1>Hi there, I'm Cihangir Yaman</h1>
         <div class="subtitle">Computer Engineering Student at Marmara University</div>
+        <div class="contact-info">
+            Istanbul, Turkey |
+            <a href="mailto:cihangiryaman819@gmail.com">cihangiryaman819@gmail.com</a>
+        </div>
         <span class="badge">Freelancer</span>
+        <span class="badge">7+ Years Coding Experience</span>
     </header>
 
     <!-- Main Portfolio Page -->
@@ -296,8 +356,11 @@
         <div class="content-grid">
             <div class="card full-width">
                 <h2>About Me</h2>
-                <p>I'm a passionate Computer Engineering student at Marmara University, actively building my skills in engineering. My journey blends rigorous coursework with real-world freelance projects, giving me hands-on experience in developing robust and scalable software solutions.</p>
-                <p>I thrive on solving problems using technology and am always eager to take on new challenges that stretch my capabilities. Whether it's collaborating on innovative projects or diving deep into new tech stacks, I aim to bridge theory with practical impact.</p>
+                <p>I'm a passionate Computer Engineering student at Marmara University (English program), actively building my skills in software engineering. My journey blends rigorous coursework with real-world freelance projects, giving me hands-on experience in developing robust and scalable software solutions.</p>
+                <p>With over 7 years of active software development experience, I've specialized in C# and ASP.NET for the past 5 years, alongside extensive work with Python, JavaScript, and various modern frameworks. I thrive on solving problems using technology and am always eager to take on new challenges that stretch my capabilities.</p>
+                <div class="highlight-box">
+                    <strong>Education:</strong> Started at Marmara University in 2023, currently in 2nd year. Graduated from Karatay Science High School in 2023. Began coding journey at age 13 through Eğirdir Municipality Software Course.
+                </div>
             </div>
 
             <div class="card">
@@ -305,11 +368,19 @@
                 <div class="skills-grid">
                     <div class="skill-item expandable" onclick="showSkillDetail('csharp')">C#</div>
                     <div class="skill-item">ASP.NET</div>
-                    <div class="skill-item">Java</div>
                     <div class="skill-item">Python</div>
-                    <div class="skill-item">FastAPI</div>
                     <div class="skill-item">JavaScript</div>
-                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">Java</div>
+                    <div class="skill-item">FastAPI</div>
+                    <div class="skill-item">Entity Framework</div>
+                    <div class="skill-item">Razor Pages</div>
+                    <div class="skill-item">Windows Forms</div>
+                    <div class="skill-item">MSSQL</div>
+                    <div class="skill-item">MySQL</div>
+                    <div class="skill-item">SQLite</div>
+                    <div class="skill-item">Redis</div>
+                    <div class="skill-item">Three.js</div>
+                    <div class="skill-item">Git</div>
                 </div>
             </div>
 
@@ -317,31 +388,71 @@
                 <h2>Languages</h2>
                 <ul class="languages-list">
                     <li><strong>Turkish</strong> - Native</li>
-                    <li><strong>English</strong> - B2-C1</li>
+                    <li><strong>English</strong> - Advanced (B2-C1) - Academic Program Language</li>
                     <li><strong>German</strong> - A2</li>
                 </ul>
             </div>
 
             <div class="card full-width">
                 <h2>Featured Projects</h2>
-                <p>Check out my pinned projects below for a showcase of what I'm most proud of!</p>
+
+                <div class="project-item">
+                    <h4>SaaS Startup Platform</h4>
+                    <div class="role">Full Stack Developer | Ongoing</div>
+                    <p>Developing a comprehensive SaaS-based web application using ASP.NET, Razor Pages, and MSSQL. Planned for public launch in January 2025. Handling complete architecture, backend logic, database design, and frontend implementation.</p>
+                </div>
+
+                <div class="project-item">
+                    <h4>apartmanyonetimsistemi.com</h4>
+                    <div class="role">Backend Support Developer</div>
+                    <p>Providing active support for system sustainability and development on ASP.NET and MSSQL stack. Maintaining and enhancing existing apartment management system features.</p>
+                </div>
+
+                <div class="project-item">
+                    <h4>3D Gear CAD Website</h4>
+                    <div class="role">Full Stack Developer</div>
+                    <p>Backend: Python FastAPI | Frontend: JavaScript | Database: MySQL<br>
+                        Technologies: FreeCAD API, Redis, Three.js<br>
+                        Developed a complete system for generating and visualizing 3D gear models with real-time rendering.</p>
+                </div>
+
+                <div class="project-item">
+                    <h4>Java Game Development Project</h4>
+                    <div class="role">Team Leader & System Designer | 2024</div>
+                    <p>Led a 3-person team in developing a Java game project. Managed system design, decision-making, team coordination, and task distribution. Achieved the highest score: 110/100 points (including all bonuses).</p>
+                </div>
+
                 <div class="projects-note">
-                    <strong>Note:</strong> The projects I'm most proud of are private because customers don't want to make them public.
+                    <strong>Note:</strong> Many projects I'm most proud of are private as clients require confidentiality. The work showcased here represents publicly shareable projects.
                 </div>
             </div>
 
             <div class="card">
-                <h2>Hobbies</h2>
+                <h2>Achievements</h2>
                 <ul class="hobbies-list">
-                    <li>Basketball & cycling enthusiast</li>
-                    <li>Deeply interested in History and Sociology</li>
+                    <li>7+ years of active software development experience</li>
+                    <li>5 years specialization in C# and ASP.NET</li>
+                    <li>Team Leader in IEEE Project Competition (9th grade)</li>
+                    <li>Completed multiple Udemy software development courses</li>
+                    <li>Started coding journey at age 13</li>
                 </ul>
             </div>
 
             <div class="card">
+                <h2>Hobbies & Interests</h2>
+                <ul class="hobbies-list">
+                    <li>Basketball & cycling enthusiast</li>
+                    <li>Deeply interested in History and Sociology</li>
+                    <li>Continuous learner in software technologies</li>
+                </ul>
+            </div>
+
+            <div class="card full-width">
                 <h2>Connect with Me</h2>
                 <p>Let's connect and collaborate on exciting projects!</p>
-                <a href="#" target="_blank" class="connect-btn">LinkedIn Profile</a>
+                <a href="https://linkedin.com/in/cihangir-yaman" target="_blank" class="connect-btn">LinkedIn Profile</a>
+                <a href="https://github.com/cihangiryaman" target="_blank" class="connect-btn">GitHub Profile</a>
+                <a href="mailto:cihangiryaman819@gmail.com" class="connect-btn">Email Me</a>
             </div>
         </div>
     </div>
@@ -353,57 +464,79 @@
         <div class="content-grid">
             <div class="card full-width">
                 <h2>C# Expertise</h2>
+                <span class="experience-badge">5 Years Experience</span>
                 <span class="experience-badge">Primary Language</span>
-                <p>C# is one of my core programming languages, which I've extensively used in both academic projects and professional freelance work. My experience spans from building desktop applications to developing robust backend systems.</p>
+                <span class="experience-badge">ASP.NET Specialist</span>
+                <p>C# is my core programming language with 5 years of intensive experience in both ASP.NET and Windows Forms development. I've extensively used Entity Framework ORM for 5 years, building robust and scalable applications for various clients and personal projects.</p>
             </div>
 
             <div class="card">
-                <h2>Frameworks & Libraries</h2>
+                <h2>Frameworks & Technologies</h2>
                 <ul class="tech-detail-list">
-                    <li><strong>ASP.NET Core:</strong> Web API development, MVC applications</li>
-                    <li><strong>.NET Framework:</strong> Traditional desktop and enterprise applications</li>
-                    <li><strong>Entity Framework:</strong> ORM for database operations</li>
-                    <li><strong>LINQ:</strong> Data querying and manipulation</li>
+                    <li><strong>ASP.NET Core:</strong> Web API development, RESTful services, MVC applications</li>
+                    <li><strong>ASP.NET Razor Pages:</strong> Server-side web applications</li>
+                    <li><strong>Windows Forms:</strong> Desktop application development</li>
+                    <li><strong>Entity Framework:</strong> 5 years ORM experience, database operations, migrations</li>
+                    <li><strong>LINQ:</strong> Advanced data querying and manipulation</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Database Experience</h2>
+                <ul class="tech-detail-list">
+                    <li><strong>MSSQL:</strong> Primary database, complex queries, stored procedures</li>
+                    <li><strong>MySQL:</strong> Cross-platform database solutions</li>
+                    <li><strong>SQLite:</strong> Lightweight embedded databases</li>
+                    <li><strong>Redis:</strong> Caching and data structure store</li>
+                    <li><strong>Entity Framework:</strong> Code-first and database-first approaches</li>
                 </ul>
             </div>
 
             <div class="card">
                 <h2>Technical Skills</h2>
                 <ul class="tech-detail-list">
-                    <li><strong>Object-Oriented Programming:</strong> Design patterns, SOLID principles</li>
-                    <li><strong>Asynchronous Programming:</strong> async/await, Task-based patterns</li>
-                    <li><strong>RESTful APIs:</strong> Building and consuming web services</li>
-                    <li><strong>Database Integration:</strong> SQL Server, PostgreSQL with C#</li>
+                    <li><strong>Object-Oriented Programming:</strong> Design patterns, SOLID principles, clean architecture</li>
+                    <li><strong>Asynchronous Programming:</strong> async/await, Task-based patterns, concurrent operations</li>
+                    <li><strong>RESTful APIs:</strong> Building and consuming web services, authentication</li>
+                    <li><strong>Database Integration:</strong> Complex queries, optimization, migrations</li>
                     <li><strong>Dependency Injection:</strong> IoC containers, service lifetime management</li>
+                    <li><strong>Version Control:</strong> Git workflows, collaborative development</li>
                 </ul>
             </div>
 
             <div class="card">
-                <h2>Project Experience</h2>
-                <h3>Freelance Projects</h3>
-                <p>Developed multiple backend systems using C# and ASP.NET Core for various clients, focusing on scalable architecture and clean code practices. Created RESTful APIs with proper authentication and authorization mechanisms.</p>
+                <h2>Major Projects</h2>
+                <h3>SaaS Startup (Ongoing)</h3>
+                <p>Building a complete SaaS platform using ASP.NET and Razor Pages with MSSQL backend. Managing full-stack development including architecture design, database schema, business logic, and user interface. Scheduled for January 2025 launch.</p>
 
-                <h3>Academic Work</h3>
-                <p>Built several university projects demonstrating proficiency in C# fundamentals, data structures, algorithms, and software design patterns. Implemented complex systems following industry best practices.</p>
+                <h3>apartmanyonetimsistemi.com</h3>
+                <p>Providing backend support and feature development for an apartment management system. Working with ASP.NET and MSSQL to maintain and enhance existing functionality while ensuring system stability.</p>
+
+                <h3>Freelance Projects</h3>
+                <p>Developed multiple backend systems and desktop applications using C#, ASP.NET, and Windows Forms for various clients. Focused on scalable architecture, clean code practices, and maintainable solutions.</p>
             </div>
 
             <div class="card">
                 <h2>Development Tools</h2>
                 <ul class="tech-detail-list">
-                    <li><strong>IDE:</strong> Visual Studio, Visual Studio Code, Rider</li>
+                    <li><strong>IDE:</strong> Visual Studio, Visual Studio Code</li>
                     <li><strong>Version Control:</strong> Git, GitHub</li>
-                    <li><strong>Testing:</strong> xUnit, NUnit, MSTest</li>
+                    <li><strong>API Testing:</strong> Postman for API development and testing</li>
                     <li><strong>Package Management:</strong> NuGet</li>
+                    <li><strong>Debugging:</strong> Advanced debugging techniques, performance profiling</li>
                 </ul>
             </div>
 
             <div class="card">
                 <h2>Key Strengths</h2>
                 <ul class="hobbies-list">
+                    <li>5 years of production-level C# development experience</li>
                     <li>Writing clean, maintainable, and well-documented code</li>
                     <li>Implementing scalable and robust backend solutions</li>
-                    <li>Problem-solving with efficient algorithms</li>
+                    <li>Problem-solving with efficient algorithms and data structures</li>
                     <li>Following modern C# best practices and conventions</li>
+                    <li>Strong Entity Framework ORM expertise (5 years)</li>
+                    <li>Experience leading development projects and teams</li>
                     <li>Continuous learning of new C# features and frameworks</li>
                 </ul>
             </div>
